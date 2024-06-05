@@ -210,13 +210,19 @@ body {
   display: inline-block;
 }
 
+/* Custom CSS for Feature Boxes */
 .feature-box {
-  background-color: #000;
-  color: #fff;
+  background-color: #fff;
+  color: #000;
+  border: 1px solid #000;
   border-radius: 10px;
-  box-shadow: 0 4px 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease-in-out;
   padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
 }
 
 .feature-box:hover {
@@ -234,32 +240,15 @@ body {
   font-size: 0.9rem;
 }
 
-.container {
-  padding-top: 10%;
+.feature-box i {
+  color: rgb(86, 82, 82);
 }
 
-.red-container {
-  background-color: #ed192e;
-  color: #fff !important;
-  border-radius: 25px;
-  margin: 5%;
-  padding: 5%;
-}
-
-.red-container h2 {
-  color: #fff;
-}
-
-.black-container {
-  background-color: #000;
-  border-radius: 25px;
-  margin: 5%;
-  padding: 5%;
-}
-
-.section-title {
-  font-size: 2rem;
-  color: #ed192e;
+@media (min-width: 769px) {
+  .row {
+    display: flex;
+    align-items: stretch;
+  }
 }
 
 @media (max-width: 768px) {
@@ -297,6 +286,34 @@ body {
   .feature-box p {
     font-size: 0.7rem;
   }
+}
+
+.container {
+  padding-top: 10%;
+}
+
+.red-container {
+  background-color: #ed192e;
+  color: #fff !important;
+  border-radius: 25px;
+  margin: 5%;
+  padding: 5%;
+}
+
+.red-container h2 {
+  color: #fff;
+}
+
+.black-container {
+  background-color: #000;
+  border-radius: 25px;
+  margin: 5%;
+  padding: 5%;
+}
+
+.section-title {
+  font-size: 2rem;
+  color: #ed192e;
 }
 
 /* Nav Bar */
@@ -414,6 +431,230 @@ body {
   cursor: pointer;
   border-radius: 50%;
   box-shadow: 0 0 2px rgba(0, 0, 0, 0.6);
+}
+
+/* Custom CSS for Pricing section */
+#pricing {
+  text-align: center;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.pricing-card {
+  background-color: #000;
+  color: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.pricing-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.pricing-card img {
+  border-radius: 12px;
+}
+
+.veneer-title {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: #ff6347;
+}
+
+.veneer-details {
+  text-align: left;
+  margin-bottom: 1.5rem;
+  padding-left: 0;
+}
+
+.veneer-details li {
+  margin-bottom: 0.5rem;
+  padding-bottom: 5px;
+  list-style: none;
+  position: relative;
+  padding-left: 20px;
+}
+
+.veneer-details li::before {
+  content: "✔";
+  color: #ff6347;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.original-price {
+  text-align: center;
+  text-decoration: line-through;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.veneer-price {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #ff6347;
+}
+
+@media (min-width: 768px) {
+  .pricing-card {
+    text-align: left;
+  }
+
+  .veneer-title,
+  .veneer-price {
+    text-align: center;
+  }
+
+  .row {
+    display: flex;
+    align-items: stretch;
+  }
+}
+
+@media (max-width: 767px) {
+  .pricing-card {
+    margin-bottom: 1.5rem;
+  }
+
+  .veneer-title {
+    font-size: 1.5rem;
+  }
+
+  .veneer-price {
+    font-size: 1.5rem;
+  }
+}
+
+/* Custom CSS for Why Choose Us section */
+#choose-us {
+  text-align: center;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.feature {
+  background-color: #ed192e;
+  color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+  padding: 20px;
+  height: 100%;
+}
+
+.feature:hover {
+  transform: translateY(-10px);
+}
+
+.feature h3 {
+  color: #fff;
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+.feature-list {
+  list-style: none;
+  padding-left: 0;
+  text-align: left;
+}
+
+.feature-list li {
+  margin-bottom: 10px;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.feature-list i {
+  margin-right: 10px;
+  font-size: 1.2rem;
+}
+
+.alternative-box {
+  background-color: #000;
+  color: #fff;
+}
+
+.alternative-box h3 {
+  color: #fff;
+}
+
+.alternative-box i {
+  color: #ed192e;
+}
+
+@media (max-width: 768px) {
+  .feature-box {
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 576px) {
+  .feature-box h3 {
+    font-size: 1.2rem;
+  }
+
+  .feature-list li {
+    font-size: 0.9rem;
+  }
+
+  .feature-list i {
+    font-size: 1rem;
+  }
+}
+
+/* Custom CSS for Guarantee section */
+#guarantee {
+  text-align: center;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.guarantee-list {
+  list-style: none;
+  padding-left: 0;
+  text-align: left;
+}
+
+.guarantee-list li {
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+}
+
+.guarantee-list i {
+  color: #28a745;
+  margin-right: 10px;
+  font-size: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .guarantee-list li {
+    font-size: 1rem;
+  }
+
+  .guarantee-list i {
+    font-size: 1.2rem;
+  }
 }
 
 footer {
