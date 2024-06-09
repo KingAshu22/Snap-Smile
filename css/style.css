@@ -143,9 +143,16 @@ body {
 
 .translateY {
   animation: translateYAnimation linear;
-  will-change: transform;
   animation-timeline: view();
   animation-range: entry 0% cover 40%;
+}
+
+@media only screen and (max-width: 767px) {
+  .translateY {
+    animation: translateXAnimation linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 40%;
+  }
 }
 
 @keyframes popup {
