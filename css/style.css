@@ -244,13 +244,6 @@ body {
   color: rgb(86, 82, 82);
 }
 
-@media (min-width: 769px) {
-  .row {
-    display: flex;
-    align-items: stretch;
-  }
-}
-
 @media (max-width: 768px) {
   .feature-box i {
     font-size: 2.5rem;
@@ -263,14 +256,14 @@ body {
   .feature-box p {
     font-size: 0.8rem;
   }
+
+  .col-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
 }
 
 @media (max-width: 576px) {
-  .col-6 {
-    flex: 0 0 33.333333%;
-    max-width: 33.333333%;
-  }
-
   .feature-box {
     padding: 10px;
   }
