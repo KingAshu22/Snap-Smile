@@ -41,3 +41,25 @@ const typeText = (element, words, delay) => {
 };
 
 typeText(document.getElementById("typewriter"), words, delay);
+
+document.addEventListener("DOMContentLoaded", () => {
+  const steps = document.querySelectorAll(".step-box");
+  const observerOptions = {
+    threshold: 0.5,
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+      } else {
+        entry.target.classList.remove("visible");
+      }
+    });
+  }, observerOptions);
+
+  steps.forEach((step, index) => {
+    observer.observe(step);
+    step.style.animationDelay = `${index * 0.3}s`; // Delay for each step
+  });
+});

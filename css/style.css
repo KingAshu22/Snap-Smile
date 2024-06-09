@@ -94,6 +94,110 @@ body {
   font-style: italic;
 }
 
+/* Animation */
+@keyframes appear {
+  from {
+    opacity: 0;
+    scale: 0.5;
+  }
+  to {
+    opacity: 1;
+    scale: 1;
+  }
+}
+
+@keyframes translateXAnimation {
+  from {
+    opacity: 0;
+    transform: translateX(-1000px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+@keyframes translateYAnimation {
+  from {
+    opacity: 0;
+    transform: translateX(1000px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+.block {
+  animation: appear linear;
+  animation-timeline: view();
+  animation-range: entry 0% cover 40%;
+}
+
+.translateX {
+  animation: translateXAnimation linear;
+  animation-timeline: view();
+  animation-range: entry 0% cover 40%;
+}
+
+.translateY {
+  animation: translateYAnimation linear;
+  animation-timeline: view();
+  animation-range: entry 0% cover 40%;
+}
+
+@keyframes popup {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.step-box {
+  opacity: 0; /* Start with invisible steps */
+  transform: scale(0.5); /* Start with scaled-down steps */
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.step-box.visible {
+  animation: popup 0.5s forwards;
+}
+
+@keyframes stamp {
+  0% {
+    transform: scale(0.5) rotate(0deg);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(2) rotate(-10deg);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+.guarantee-img {
+  animation: stamp 5s linear;
+  animation-timeline: view();
+  animation-range: entry 0% cover 40%;
+}
+
+.guarantee-list li {
+  list-style: none;
+  margin-bottom: 10px;
+}
+
+.guarantee-list i {
+  color: #28a745;
+  margin-right: 10px;
+}
+
 /* Hero Section */
 .hero-section {
   position: relative;
@@ -617,8 +721,13 @@ body {
 }
 
 .section-title {
-  font-size: 2.5rem;
+  font-size: 2rem;
   margin-bottom: 1rem;
+}
+
+.img-fluid {
+  max-width: 100%;
+  height: auto;
 }
 
 .guarantee-list {
@@ -641,8 +750,16 @@ body {
 }
 
 @media (max-width: 768px) {
+  .guarantee-list {
+    padding-left: 0;
+  }
+
   .guarantee-list li {
     font-size: 1rem;
+  }
+
+  .guarantee-img {
+    animation: stamp 1s ease-in-out, rotate 5s linear infinite; /* Slower rotation for mobile */
   }
 
   .guarantee-list i {
